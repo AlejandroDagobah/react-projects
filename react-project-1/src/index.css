@@ -1,13 +1,74 @@
+*{
+  box-sizing: border-box;
+  color: #FFFFFF;
+}
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font-family: 'Inter', sans-serif;
+  background-color: #282D35;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.nav{
+  background-color: #21222A;
+  display: flex;
+  padding: 26px;
+  align-items: center;
 }
+
+.nav-logo{
+  width: 100px;
+  margin-left: -20px;
+}
+.nav-title{
+  font-size:30px;
+  font-weight: bold;
+  color: #61DAFB;
+}
+.nav-subtitle{
+  font-weight:700;
+  margin-left: auto;
+}
+
+.content-container{
+  padding: 100px;
+
+  background-image: url(./img/logo-bg.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position-x: right;
+  background-position-y: center;
+
+}
+
+.content-title{
+  margin: 0;
+  font-weight:bold;
+  font-size: 50px;
+  letter-spacing: -1px;
+
+}
+.content-list{
+  margin-top: 50px;
+  z-index: 1;
+  
+
+}
+
+.content-list > li{
+  font-size: 18px;
+  margin-bottom: 25px;
+}
+
+.content-list > li::marker{
+  color:#61DAFB;
+  font-size: 1.4rem;
+
+}
+/*
+.bg-logo{
+  position: absolute;
+  right:0px;
+  height: 600px;
+  z-index: -1;
+}
+*/
