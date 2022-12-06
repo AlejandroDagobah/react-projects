@@ -1,0 +1,101 @@
+body{
+  background-color: #23252C;
+  color: #fff;
+  font-family: 'Inter', sans-serif;
+}
+
+.app{
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   padding: 20px;
+}
+
+.container{
+  background-color: #1A1B21;
+  width: 317px;
+  border-radius: 15px 15px 15px 15px;
+
+}
+.portrait-photo{
+  width: 100%;
+  border-radius: 15px 15px 0px 0px;
+
+}
+
+.title-1, .title-2, .web-subtitle{
+  text-align: center;
+  margin: 0;
+
+}
+.title-1{
+  font-size: 25px;
+  margin-top: 21px;
+}
+
+.title-2{
+  font-size: 12.8px;
+  line-height: 6px;
+  color: #F3BF99;
+  margin-top: 6.21px;
+
+}
+.web-subtitle{
+    margin-top: 8.21px;
+    margin-bottom: 15px;
+
+}
+.btn{
+  margin:5px;
+  padding: 9px 11px 9px 11px;
+  font-size: 14px;
+  font-family: 'Inter', sans-serif;
+  border-radius: 6px;
+  border: none;
+}
+.btn > i{
+  margin-right: 8px;
+}
+
+.btn-linkedin {
+  background-color: #5093E2;
+  color: #ffffff;
+}
+
+.buttons-container{
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.parragraph{
+  padding: 10px 36px 10px 36px;
+}
+
+.parragraph > p, .web-subtitle{
+  font-size: 10.24px;
+  font-weight: lighter;
+  line-height: 150%;
+}
+h3{
+  margin: 0px;
+}
+
+.footer{
+  background-color: #161619;
+  height: 50px;
+  margin-top: 24px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0px 0px 15px 15px;
+
+}
+
+.icons-container > img{
+  width: 25px;
+  height: 25px;
+  padding: 11.75px;
+  
+}
