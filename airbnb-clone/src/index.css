@@ -1,0 +1,110 @@
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.nav-container{
+  padding: 20px 0px 20px 0px;
+  box-shadow: 3px 0px 7.46px 0px rgba(0,0,0,0.1);
+  display:flex;
+  align-content: center;
+}
+
+.nav-container > img{
+  margin-left: 22px
+}
+
+.header-container{
+  padding: 20px 10% 20px 10%;
+}
+
+.image-container > img{
+  width: 70%;
+}
+
+.header-container > h1{
+  font-size: 45px;
+  font-weight: 700;
+  margin-top: 32px;
+  margin-bottom: 16px;
+}
+.header-container > h3{
+  font-size: 20px;
+  font-weight: lighter;
+  margin:0;
+  margin-right: 45%;
+}
+.image-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+}
+
+
+/**CARDS**/
+
+.cards-container{
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 20px;
+  overflow-x: auto;
+  padding: 20px 10% 20px 10%;
+}
+
+.card{
+  width: 250px;
+  flex: 0 0 auto;
+  display: flex;
+  flex-direction: column;
+  position:relative;
+}
+
+
+.card-badge{
+  position: absolute;
+  left: 10px;
+  top: 10px;
+  margin: 0;
+  background-color: #FFFFFF;
+  padding: 5px 6px 5px 6px;
+  border-radius: 5px;  
+}
+
+.card-stats{
+  display: flex;
+  align-items: center;
+}
+
+.card-img{
+  width: 100%;
+}
+
+.card-rating-img{
+  width: 15px;
+  height: 15px;
+  margin-bottom: 3px;
+}
+.card-rating{
+  margin-left: 5px;
+
+}
+
+.card-place{
+  color:#918E9B;
+
+}
+
+.card-description{
+  margin: 5px 0px 5px 0px;
+
+}
+
+.card-price{
+  margin:0;
+}
