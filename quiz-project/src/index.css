@@ -1,0 +1,128 @@
+html, body{
+  background-color: rgb(76, 75, 90);
+  height: 98%;
+  font-family: 'Karla', sans-serif;
+}
+
+#root{
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center;
+  vertical-align: middle;
+
+}
+
+.App{
+  background-color: #F5F7FB;
+  width: 750px;
+  height: 750px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-image: url("./img/intro-page.png");
+  background-size: contain;
+  box-shadow: 10px 10px 20px 0px #00000040;
+
+}
+
+.container{
+  color:#293264;
+  padding: 70px;
+  text-align: center;
+}
+
+.introView > h1{
+  font-size: 43px;
+  margin: 0;
+
+}
+
+.introView > p{
+  font-size: 20px;
+  margin-top: 5px;
+  margin-bottom: 30px;
+}
+
+.btn-app{ 
+  background-color: #4D5B9E;
+  color: #fff;
+  font-family: 'Karla', sans-serif;
+  font-size: 20px;
+  border: none;
+  border-radius: 15px;
+  width: 250px;
+  height: 60px;
+  padding: 5px 5px 5px 3px;
+  box-shadow: 0px 4px 4px 0px #00000040;
+  cursor: pointer;
+
+}
+
+.btn-app:active{
+  background-color: #293264;
+  transition: 0.1s;
+}
+
+.questions{
+  text-align: start;
+}
+
+.questions > h2{
+  font-size: 20px;
+}
+
+
+.buttons-container{
+ display: flex;
+ flex-direction: row;
+ justify-content: start;
+ list-style-type: none;
+ padding: 0;
+
+}
+
+.buttons-container > button{
+  margin-right: 10px;
+  padding: 5px 10px 5px 10px;
+
+  border: 0.794239px solid #4D5B9E;
+  border-radius: 8px;
+  background-color: #ffffff00;
+
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 18px;
+  /* identical to box height */
+
+  text-align: center;
+
+  color: #293264;
+
+}
+
+
+.submit-btn{
+  background-color: #4D5B9E;
+  color: #fff;
+  font-family: 'Karla', sans-serif;
+  font-size: 16px;
+  border: none;
+  border-radius: 15px;
+  width: 150px;
+  height: 50px;
+  padding: 5px 5px 5px 3px;
+  box-shadow: 0px 4px 4px 0px #00000040;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+
+hr{
+  border: 1px solid #DBDEF0;
+  margin: 15px 0px 15px 0px;
+}
