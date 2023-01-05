@@ -3,7 +3,7 @@ import Question from "./Question";
 import {nanoid} from "nanoid"
 export default function QuizView(props){
     
-
+    const [answersSubmitted, setAnswersSubmitted] = React.useState([])
 
     function decodeText(text) {
         const parser = new DOMParser;
@@ -31,7 +31,7 @@ export default function QuizView(props){
         })
 */
     
-        return <Question key={nanoid()} id={index} question={decodeText(questionObj.question)} answers={answersList}/>
+        return <Question key={nanoid()} id={index} question={decodeText(questionObj.question)} answers={answersList} setAnswersSubmitted={setAnswersSubmitted}/>
 
     })
 

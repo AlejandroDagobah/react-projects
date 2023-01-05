@@ -10,11 +10,9 @@ export default function Question(props) {
         {value: props.answers[2], isCorrect:"", isClicked: false},
         {value: props.answers[3], isCorrect:"", isClicked: false}
     ])
-    //Bucle to create all buttons with the posible answers **Returns as radio input types
+
 
  
-    console.log(answerButtons)
-
 
     function clickAnswer(e) {
         e.preventDefault()
@@ -31,6 +29,7 @@ export default function Question(props) {
                 if(answer.value == button.value){
                     newAnswers.push({...answer, isClicked: true})
 
+
                 }else{
                     newAnswers.push({...answer, isClicked: false})
 
@@ -40,14 +39,27 @@ export default function Question(props) {
             return newAnswers
 
         })
+
+
+        
+        props.setAnswersSubmitted(prevAnswersSubmited =>{
+
+            const newAnswers = []
+
+
+            return [...prevAnswersSubmited]
+
+        })
+
+
     }
     
-
-
+    
 
     let buttons = answerButtons.map(answer =>{
         return <button key={nanoid()} style={answer.isClicked ? {backgroundColor: '#D6DBF5'} : {backgroundColor: '#ffffff00'}} value={answer.value} onClick={(e) => clickAnswer(e)}>{answer.value}</button>
     })
+
 
     return(
         <div className="questions">
