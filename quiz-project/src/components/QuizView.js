@@ -2,34 +2,49 @@ import React from "react";
 import Question from "./Question";
 import {nanoid} from "nanoid"
 export default function QuizView(props){
-    const [givenQuestions, setGivenQuestions] = React.useState([])
+    
 
-    let questions = props.questions.map(questionObj =>{
-        
-        const encodedStr = questionObj.question
 
+    function decodeText(text) {
         const parser = new DOMParser;
         const dom = parser.parseFromString(
-            '<!doctype html><body>' + encodedStr,
+            '<!doctype html><body>' + text,
             'text/html');
-        var decodedString = dom.body.textContent;
+        return dom.body.textContent;
+    }
+      
+    let questionsElements = props.questions.map((questionObj, index) =>{       
         
-        let posibleAnswers = questionObj.incorrect_answers
+        const answersList = []
 
-        posibleAnswers.push(questionObj.correct_answer)
-        
-        console.log(questionObj)
-        return <Question key={nanoid()} question={decodedString} answers={posibleAnswers} questionSubmitted={setGivenQuestions}/>
+        for (let i = 0; i < questionObj.incorrect_answers.length; i++) {
+            const answer = questionObj.incorrect_answers[i];
+
+            answersList.push(decodeText(answer))    
+        }
+
+        answersList.push(decodeText(questionObj.correct_answer))
+
+        /*
+        answersList.sort(() =>{
+            return Math.random() - 0.5
+        })
+*/
+    
+        return <Question key={nanoid()} id={index} question={decodeText(questionObj.question)} answers={answersList}/>
+
     })
+
 
     function submitAnswers() {
         //check if all selected answers 
     }
 
+
     return (
         <div>
             <form>
-            {questions}
+            {questionsElements}
             <button className="submit-btn" type="">Check answers</button>
             </form>
         </div>

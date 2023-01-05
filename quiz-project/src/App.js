@@ -5,16 +5,17 @@ import QuizView from "./components/QuizView"
 export default function App() {
   const [mainView, setMainView] = React.useState(true)
   const [questions, setQuestions] = React.useState([])
-  React.useEffect(() =>{
+  const [quizState, setQuizState] = React.useState(0)
 
-    fetch('https://opentdb.com/api.php?amount=5')
-    .then(response => response.json())
-    .then((data) => {      
-      setQuestions(data.results)
-    })
+  React.useEffect(function(){
 
-  }, [mainView])
-
+      fetch('https://opentdb.com/api.php?amount=5&difficulty=medium&type=multiple')
+      .then(response => response.json())
+      .then((data) => {      
+        setQuestions(data.results)
+      })
+  
+    }, [quizState])
 
   return (
     

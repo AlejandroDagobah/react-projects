@@ -3,9 +3,17 @@ import React from "react";
 
 export default function Question(props) {
 
-    //Bucle to create all buttons with the posible answers **Returns as radio input types
-    const [anseredQuestons, setAnsweredQuestions] = React.useState([]) 
 
+    const [answerButtons, setAnswerButtons] = React.useState([
+        {value: props.answers[0], isCorrect:"", isClicked: false},
+        {value: props.answers[1], isCorrect:"", isClicked: false},
+        {value: props.answers[2], isCorrect:"", isClicked: false},
+        {value: props.answers[3], isCorrect:"", isClicked: false}
+    ])
+    //Bucle to create all buttons with the posible answers **Returns as radio input types
+
+ 
+    console.log(answerButtons)
 
 
     function clickAnswer(e) {
@@ -13,38 +21,32 @@ export default function Question(props) {
 
         const button = e.target
 
-        let sibilings = button.parentNode.childNodes
+        setAnswerButtons(prevAnswer => {
 
-        for (let i = 0; i < sibilings.length; i++) {
-            const sibiling = sibilings[i];
-            if(sibiling.value != button.value)
-            {
-                sibiling.style.background = '#ffffff00'
+            let newAnswers = []
+               
+            for (let i = 0; i < prevAnswer.length; i++) {
+                const answer = prevAnswer[i];
 
-            }else{
-                button.style.background = '#D6DBF5'
-                
-                setAnsweredQuestions(prevQuestions =>{
+                if(answer.value == button.value){
+                    newAnswers.push({...answer, isClicked: true})
 
-                    let arrayQuestions = []
-                    for (let i = 0; i < props.question.length; i++) {
-                        arrayQuestions.push({question: props.question, givenAnswer: button.value})
-                    }
+                }else{
+                    newAnswers.push({...answer, isClicked: false})
 
-                  
-                })
+                }
             }
-        }
+           
+            return newAnswers
 
-        let answer = button.value
-
-
-        console.log(answer)
-
+        })
     }
+    
 
-    let buttons = props.answers.map(answer =>{
-        return <button key={nanoid()} value={answer} onClick={(e) => clickAnswer(e)}>{answer}</button>
+
+
+    let buttons = answerButtons.map(answer =>{
+        return <button key={nanoid()} style={answer.isClicked ? {backgroundColor: '#D6DBF5'} : {backgroundColor: '#ffffff00'}} value={answer.value} onClick={(e) => clickAnswer(e)}>{answer.value}</button>
     })
 
     return(
