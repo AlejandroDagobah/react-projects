@@ -126,3 +126,20 @@ hr{
   border: 1px solid #DBDEF0;
   margin: 15px 0px 15px 0px;
 }
+
+
+.button-answer:focus{
+
+  background-color: #D6DBF5;
+}
+
+.score{
+  
+  font-family: Inter;
+  font-size: 16px;
+  font-weight: bolder;
+  line-height: 15px;
+  letter-spacing: 0em;
+  margin-right: 20px;
+
+}
