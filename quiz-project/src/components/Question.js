@@ -24,19 +24,27 @@ export default function Question(props) {
 
 
     let buttons = answerButtons.map(answer =>{
-        let styles = {backgroundColor:"#ffffff00"}
+        let styles = {backgroundColor:"#ffffff00", opacity: '1',border: '1.5px solid #4D5B9E'}
 
-        if(props.isFinalized == false){
-            styles.backgroundColor = answer.isClicked && '#D6DBF5'
-            
-        }else if(answer.isClicked && props.isFinalized == true){
-            styles.backgroundColor = props.correct_answer === answer.answer ? '#94D7A2' : "#F8BCBC"
+        
+        if(props.isFinalized == true){
+            if(answer.isClicked){
+                //styles.backgroundColor = props.correct_answer === answer.answer ? '#94D7A2' : "#F8BCBC"
+                styles = props.correct_answer === answer.answer ? {backgroundColor:"#94D7A2", opacity: '1',border: 'none', fontWeight:'bold' } : {backgroundColor:"#F8BCBC", opacity: '1',border: 'none',  fontWeight:'medium'}
+            }else{
+                styles = props.correct_answer === answer.answer ? {backgroundColor:"#94D7A2", opacity: '1',border: 'none', fontWeight:'bold' } : {backgroundColor:"#ffffff00", opacity: '1',border: '1.5px solid #4D5B9E'}
 
-        }else if(props.isFinalized == true){
-            styles.backgroundColor = answer.isClicked == false && props.correct_answer === answer.answer ? '#94D7A2' : "#ffffff00"
+                //styles.backgroundColor = props.correct_answer === answer.answer ? '#94D7A2' : "#F8BCBC"
+                styles.opacity = '0.5'
+            }
+
+        }else{
+            styles.backgroundColor = answer.isClicked ? '#D6DBF5' : '#ffffff00'
         }
+
         return <button className="button-answer" key={nanoid()} style={styles} value={answer.answer} onClick={(e) => clickAnswer(e)}>{answer.answer}</button>
     })
+
 
 
     return(

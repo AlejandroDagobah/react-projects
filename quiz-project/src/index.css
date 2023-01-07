@@ -88,13 +88,13 @@ html, body{
   margin-right: 10px;
   padding: 5px 10px 5px 10px;
 
-  border: 0.794239px solid #4D5B9E;
+  border: 1.5px solid #4D5B9E;
   border-radius: 8px;
   background-color: #ffffff00;
 
   font-family: 'Inter';
   font-style: normal;
-  font-weight: 500;
+  font-weight: medium;
   font-size: 15px;
   line-height: 18px;
   /* identical to box height */
@@ -135,7 +135,7 @@ hr{
 
 .score{
   
-  font-family: Inter;
+  font-family: 'Karla';
   font-size: 16px;
   font-weight: bolder;
   line-height: 15px;
